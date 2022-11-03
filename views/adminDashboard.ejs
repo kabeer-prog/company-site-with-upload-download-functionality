@@ -1,0 +1,39 @@
+<%- include('partials/header') -%>
+
+<% if (user.admin !== true) { %>
+  <div class="w-screen h-screen flex justify-center place-items-center px-5">
+    <h1 class="text-3xl">Sorry you don't have access to this page.</h1>
+    <a href="/profile" class="btn btn-primary">Back to Profile</a>
+  </div>
+<% } else { %>
+<div class="w-full my-6">
+    <h1 class="text-3xl p-5">You have <%= posts.length %> documents to check out.</h1>
+    <div class="w-full h-full">
+      <ul class="flex flex-col w-full h-full md:flex-row md:flex-wrap">
+        <% for(var i=0; i<posts.length; i++) {%>
+          <li class="w-full h-full my-2 p-5 md:w-1/3">
+            <div class="h-full">
+              <a href="/post/<%= posts[i]._id%>" class="underline text-indigo-500 text-xl font-bold hover:text-indigo-100 duration-200">View Uploaded Doc</a>
+              <p><span class="text-lg font-bold text-pink-500">User: </span><%= posts[i].user %></p>
+              <p><span class="text-lg font-bold text-pink-500">Email: </span><%= posts[i].user %></p>
+              <p><span class="text-lg font-bold text-pink-500">Title: </span><%= posts[i].title %></p>
+              <p><span class="text-lg font-bold text-pink-500">Special Requests: 
+                </span><%= posts[i].caption.length > 100 ? posts[i].caption.slice(0, 100) : posts[i].caption %><span>...</span>
+              </p>
+              <p><span class="text-lg font-bold text-pink-500">Paid: </span>
+                <% if(posts[i].paid === false) { %> 
+                  <span class="text-red-500"> &#10005; NOT PAID </span>  
+                <% } else { %>
+                  <span class="text-green-500 font-bold"> &#x2713; PAID </span>  
+                  <% } %>
+              </p>
+              <iframe class="w-full h-[500px] my-1" src="<%= posts[i].image%>"></iframe>
+            </div>
+          </li>
+        <% } %>
+        </ul>
+    </div>
+  </div>  
+
+<% } %>
+<%- include('partials/footer') -%>
