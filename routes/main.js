@@ -16,6 +16,7 @@ router.get("/contact", homeController.getContact);
 router.get("/success", homeController.getSuccess);
 router.get("/cancel", homeController.getCancel);
 
+
 // more complicated routes
 router.get("/profile", ensureAuth, postsController.getProfile);
 router.get("/adminDashboard", ensureAuth, postsController.getAdminDashboard);
