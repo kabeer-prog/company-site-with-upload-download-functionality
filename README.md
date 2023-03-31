@@ -4,9 +4,13 @@
 A friend's company wanted a website with upload, download, signup, signin, and payment functionality. That's a lot. So I said, sure!
 
 ---
+# Technologies Used
+Front end: HTML, CSS,EJS, Bootstrap, JavaScript
+
+Back end: Node, Express, MongoDB, Mongoose, Cloudinary
 
 # Things to add
-You can always make things better. Adding PDFs to cloudinary and such was not so easy with React. I'll jump into that next time if I have more time. 
+I can always make things better. Adding PDFs to cloudinary and such was not so easy with React. I'll jump into that next time if I have more time. 
 - transfer all frontend to React.js or Next.js
 - tidy-up the user interface
 - provide more robust authentication for the admin
