@@ -8,10 +8,10 @@ const UserSchema = new mongoose.Schema({
   admin: false
 });
 
-// Check if USER is Jacob
+// Check if USER is kabeer
 UserSchema.pre("save", function save(next) {
   const user = this;
-  if (user.email === 'jacobegood@gmail.com') {
+  if (user.email === 'akannikabeer@gmail.com') {
     user.admin = true
     next()
   }
